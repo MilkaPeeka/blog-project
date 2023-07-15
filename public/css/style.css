@@ -1,0 +1,20 @@
+svg {
+    fill: white;
+}
+
+.nav-link {
+    color: var(--bs-light);
+}
+
+.nav-link:hover {
+    color: var(--bs-warning);
+}
+
+.nav-link:focus {
+    color: var(--bs-danger);
+}
+
+.container-fluid {
+    padding: 2rem;
+    width: 67%;
+}
