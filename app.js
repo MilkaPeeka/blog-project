@@ -18,7 +18,7 @@ const items = [{title: "Home", text: homeStartingContent},
 
 app.get('/', (req, res) => {
     const data = {
-    items: items
+    items: items,
     };
     res.render("index", data);
 });
@@ -27,7 +27,7 @@ app.get('/about_us', (req, res) => {
     const data = {
     item: {
         title: "About Us",
-        text: aboutContent
+        text: aboutContent,
     },
     title: "About Us"};
     res.render("web-information", data);
@@ -36,12 +36,32 @@ app.get('/contact_us', (req, res) => {
     const data = {
     item: {
         title: "Contact Us",
-        text: contactContent
+        text: contactContent,
+        showMore: false
     },
     title: "Contact Us"};
     res.render("web-information", data);
 });
 
+
+app.get("/compose", (req,res) => {
+    res.render("compose");
+});
+
+app.post("/compose", (req,res) => {
+    items.push({
+        title: req.body.title,
+        text: req.body.text,
+    });
+    res.redirect("/");
+});
+
+app.get("/show/:index", (req, res) => {
+    const index = parseInt(req.params.index);
+    res.render("web-information", {item: items[index], title: items[index].title})
+
+
+});
 
 
 app.listen("3000", () => {

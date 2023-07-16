@@ -1,4 +1,23 @@
 <div class="container-fluid py-10 px-100">
-    <h1 class="display-4"><%= item.title %></h1>
+    <div class="row">
+        <h1 class="display-4"><%= item.title %></h1>
+    </div>
+
+<div class="row">
+
+<div class="col-auto">
     <p class="lead"><%= item.text %></p>
+
+</div>
+<% if (item.showMore) { %>
+
+<div class="col p-0 m-0">
+    <div class="container p-0 m-0">
+        <a href="/show/<%= item.index %>" class="show-more-link">Show More</a>
+      </div>
+    <% } %>
+</div>
+</div>
+
+
 </div>

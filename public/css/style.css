@@ -6,7 +6,7 @@ svg {
     color: var(--bs-light);
 }
 
-.nav-link:hover {
+.nav-link:hover, a {
     color: var(--bs-warning);
 }
 
@@ -18,3 +18,21 @@ svg {
     padding: 2rem;
     width: 67%;
 }
+
+.show-more-link{
+    font-size: 1.25rem;
+    font-weight: lighter;
+}
+
+button[type="submit"]{
+    margin-top: 3rem;
+    width: 30%;
+}
+
+.form-group {
+    margin-top: 1.5rem;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25) !important;
+} 
